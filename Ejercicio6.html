@@ -6,7 +6,7 @@
 	<title></title>
 </head>
 <body>
-    <button>Clasificar Arreglo</button>
+    <button onclick="sortList()">Clasificar Arreglo</button>
     <ul id="par">
         <strong>Pares</strong>
     </ul>
@@ -18,6 +18,32 @@
     </ul>
     <script>
         var arr = [1,'dos','tres',4,5,6,'siete',8,9,'diez'];
+        var impares = [];
+        var impares = [];
+        var strings = [];
+        function sortList(arr) {
+          var par_tag = document.getElementById('par');
+          arr.map(function(x){
+            if(isEven(x)) {
+              pares.push(x)
+              var doc_element = document.createElement("li");
+              node = document.createTextNode(pares);
+              doc_element.appendChild(node);
+              par_tag.appendChild(doc_element);
+            } else if (isOdd(x)){
+              impares.push(x)
+            } else {
+              strings.push(x)
+            }
+          });
+        }
+        function isEven(n) {
+          return n % 2 == 0;
+        }
+
+        function isOdd(n) {
+          return.Math.abs(n % 2) == 1;
+        }
     </script>
 </body>
 </html>
