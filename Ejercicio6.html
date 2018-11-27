@@ -18,22 +18,31 @@
     </ul>
     <script>
         var arr = [1,'dos','tres',4,5,6,'siete',8,9,'diez'];
-        var impares = [];
+        var pares = [];
         var impares = [];
         var strings = [];
+        var par_tag = document.getElementById('par');
+        var impar_tag = document.getElementById('impar');
+        var string_tag = document.getElementById('string');
+        var doc_element = document.createElement("li");
+
         function sortList(arr) {
-          var par_tag = document.getElementById('par');
           arr.map(function(x){
             if(isEven(x)) {
               pares.push(x)
-              var doc_element = document.createElement("li");
               node = document.createTextNode(pares);
               doc_element.appendChild(node);
               par_tag.appendChild(doc_element);
             } else if (isOdd(x)){
               impares.push(x)
+              node = document.createTextNode(impares);
+              doc_element.appendChild(node);
+              impar_tag.appendChild(doc_element);
             } else {
               strings.push(x)
+              node = document.createTextNode(strings);
+              doc_element.appendChild(node);
+              string_tag.appendChild(doc_element);
             }
           });
         }
